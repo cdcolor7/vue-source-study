@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写VUE</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <p>{{counter}}</p> -->
+  </div>
+</body>
+<script  src="../dist/vue.js"></script>
+<script>
+  const app = new Pvue({
+    el: "#app",
+    data: {
+      counter: 1,
+    },
+    methods: {
+      onclick() {
+        this.arr.push(3)
+        this.arr.reverse()
+      },
+      onDubleClick() {
+        this.counter += 2;
+      }
+    },
+    render(h){
+      return h('div', { id: 'app'}, this.counter + '');
+    }
+  })
+  setInterval(() => {
+    app.counter += 1;
+  }, 1000)
+</script> 
+</html>
